@@ -88,7 +88,11 @@ INCLUDE_DIRECTORIES( ${CMAKE_SOURCE_DIR}/src/SeExprEditor )
 
 # Allowing to use lib64
 IF (NOT DEFINED CMAKE_INSTALL_LIBDIR)
-    SET(CMAKE_INSTALL_LIBDIR "lib")
+    IF ("${LIB64}" STREQUAL "TRUE")
+        SET(CMAKE_INSTALL_LIBDIR "lib64")
+    ELSE()
+        SET(CMAKE_INSTALL_LIBDIR "lib")
+    ENDIF()
 ENDIF()
 
 ## Traverse subdirectories
