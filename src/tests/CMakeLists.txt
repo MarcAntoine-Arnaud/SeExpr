@@ -17,5 +17,5 @@
 foreach(item basic)
     ADD_EXECUTABLE(${item} "${item}.cpp")
     target_link_libraries(${item} ${SEEXPR_LIBRARIES})
-    install(TARGETS ${item} DESTINATION share/test/SeExpr)
+    install(TARGETS ${item} DESTINATION bin/test/SeExpr)
 endforeach(item)
